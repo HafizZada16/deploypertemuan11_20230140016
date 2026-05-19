@@ -2,32 +2,59 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<form th:action="@{/register}" method="post" th:object="${request}">
+<div class="card-container">
+    <h1>Register</h1>
 
-    <input type="text"
-           th:field="*{username}"
-           placeholder="Username">
+    <form th:action="@{/register}" method="post" th:object="${request}">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+                   id="username"
+                   th:field="*{username}"
+                   placeholder="Choose a username"
+                   required>
+        </div>
 
-    <input type="password"
-           th:field="*{password}"
-           placeholder="Password">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   th:field="*{password}"
+                   placeholder="Choose a password"
+                   required>
+        </div>
 
-    <input type="text"
-           th:field="*{nama}"
-           placeholder="Nama">
+        <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text"
+                   id="nama"
+                   th:field="*{nama}"
+                   placeholder="Enter your full name"
+                   required>
+        </div>
 
-    <input type="text"
-           th:field="*{alamat}"
-           placeholder="Alamat">
+        <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input type="text"
+                   id="alamat"
+                   th:field="*{alamat}"
+                   placeholder="Enter your address"
+                   required>
+        </div>
 
-    <button type="submit">
-        Register
-    </button>
+        <button type="submit">
+            Create Account
+        </button>
+    </form>
 
-</form>
-
+    <div class="footer-text">
+        <p>Sudah memiliki akun? <a th:href="@{/login}">Login disini</a></p>
+    </div>
+</div>
 </body>
 </html>

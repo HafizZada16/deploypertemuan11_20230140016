@@ -2,29 +2,32 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Profile</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Home</h1>
+<div class="card-container">
+    <h1>Home - Profile</h1>
 
-<p>
-    Username:
-    <span th:text="${user.username}"></span>
-</p>
+    <div class="profile-info">
+        <div class="info-item">
+            <span class="info-label">Username</span>
+            <span class="info-value" th:text="${user.username}">admin</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Nama</span>
+            <span class="info-value" th:text="${profile.nama}">Full Name</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Alamat</span>
+            <span class="info-value" th:text="${profile.alamat}">Address Info</span>
+        </div>
+    </div>
 
-<p>
-    Nama:
-    <span th:text="${profile.nama}"></span>
-</p>
-
-<p>
-    Alamat:
-    <span th:text="${profile.alamat}"></span>
-</p>
-
-<a th:href="@{/logout}">
-    Logout
-</a>
-
+    <a th:href="@{/logout}" class="logout-btn">
+        Logout
+    </a>
+</div>
 </body>
 </html>
